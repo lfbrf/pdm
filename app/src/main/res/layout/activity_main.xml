@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="302dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Usuario"
+        android:inputType="textPersonName"
+        app:layout_constraintHorizontal_bias="0.454"
+        android:onClick="cadastrarUsuario"
+        android:text="CadastrarUsuarios" />
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="302dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Usuario"
+        android:inputType="textPersonName"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintLeft_toLeftOf="@+id/button2"
+        app:layout_constraintRight_toRightOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        android:onClick="listarUsuarios"
+        android:text="listarUsuarios" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="302dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Usuario"
+        android:inputType="textPersonName"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintLeft_toLeftOf="@+id/button4"
+        app:layout_constraintRight_toRightOf="@+id/button4"
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        android:onClick="cadastrarMedico"
+        android:text="CadastrarMedicos" />
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="br.edu.utfpr.projeto2018.MainFragment"
+        tools:layout="@layout/main_fragment">
+    </fragment>
+
+
+</android.support.constraint.ConstraintLayout>

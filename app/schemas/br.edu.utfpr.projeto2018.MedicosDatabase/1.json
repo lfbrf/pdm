@@ -1,0 +1,105 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "ccde34be700cbec5b89411008b551a41",
+    "entities": [
+      {
+        "tableName": "Medico",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nome` TEXT, `endereco` TEXT, `especialidade` TEXT, `sexoMasculino` INTEGER NOT NULL, `sexoFeminino` INTEGER NOT NULL, `convenioUnimed` INTEGER NOT NULL, `convenioCassi` INTEGER NOT NULL, `convenioItau` INTEGER NOT NULL, `convenioBradesco` INTEGER NOT NULL, `convenioOutro` INTEGER NOT NULL, `convenioSantander` INTEGER NOT NULL, `convenioClinipam` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "endereco",
+            "columnName": "endereco",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "especialidade",
+            "columnName": "especialidade",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sexoMasculino",
+            "columnName": "sexoMasculino",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sexoFeminino",
+            "columnName": "sexoFeminino",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "convenioUnimed",
+            "columnName": "convenioUnimed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "convenioCassi",
+            "columnName": "convenioCassi",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "convenioItau",
+            "columnName": "convenioItau",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "convenioBradesco",
+            "columnName": "convenioBradesco",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "convenioOutro",
+            "columnName": "convenioOutro",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "convenioSantander",
+            "columnName": "convenioSantander",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "convenioClinipam",
+            "columnName": "convenioClinipam",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"ccde34be700cbec5b89411008b551a41\")"
+    ]
+  }
+}
