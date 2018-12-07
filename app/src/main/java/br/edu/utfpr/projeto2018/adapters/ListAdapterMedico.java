@@ -1,4 +1,4 @@
-package br.edu.utfpr.projeto2018;
+package br.edu.utfpr.projeto2018.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,10 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import android.widget.Toast;
+
+import br.edu.utfpr.projeto2018.R;
+import br.edu.utfpr.projeto2018.model.Medico;
+
 public class ListAdapterMedico extends ArrayAdapter<Medico> {
 
     private Context context;

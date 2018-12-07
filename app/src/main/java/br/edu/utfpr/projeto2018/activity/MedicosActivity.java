@@ -1,32 +1,23 @@
-package br.edu.utfpr.projeto2018;
+package br.edu.utfpr.projeto2018.activity;
 
 import android.app.Activity;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import br.edu.utfpr.projeto2018.model.Medico;
+import br.edu.utfpr.projeto2018.R;
 
 
 public class MedicosActivity extends Activity {

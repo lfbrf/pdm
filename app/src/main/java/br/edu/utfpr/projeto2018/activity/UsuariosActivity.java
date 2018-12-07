@@ -1,4 +1,4 @@
-package br.edu.utfpr.projeto2018;
+package br.edu.utfpr.projeto2018.activity;
 
 import android.app.NotificationManager;
 import android.content.Context;
@@ -13,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -21,8 +20,11 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
+import br.edu.utfpr.projeto2018.R;
+import br.edu.utfpr.projeto2018.adapters.ListAdapterUsuario;
+import br.edu.utfpr.projeto2018.banco.UsuarioDAO;
+import br.edu.utfpr.projeto2018.model.Usuario;
 
 
 public class UsuariosActivity extends AppCompatActivity {
@@ -243,7 +245,7 @@ public class UsuariosActivity extends AppCompatActivity {
 
         UsuarioDAO usuarioDAO = new UsuarioDAO(this);
         usuarios = usuarioDAO.getUsuarios();
-
+        //aqui pegar do bundle
         listUser.setAdapter(
                 new ListAdapterUsuario(this, usuarios)
         );

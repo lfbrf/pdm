@@ -1,12 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/mmedicos"
         android:orderInCategory="100"
 
         android:title="Cadastrar medicos"/>
     <item
-        android:id="@+id/action_help"
+        android:id="@+id/musuarios"
         android:orderInCategory="100"
 
         android:title="Cadastrar usuarios"/>
+    <item
+        android:id="@+id/mconsultas"
+        android:orderInCategory="100"
+
+        android:title="Cadastrar consultas"/>
 </menu>

@@ -1,4 +1,4 @@
-package br.edu.utfpr.projeto2018;
+package br.edu.utfpr.projeto2018.model;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
@@ -147,6 +147,13 @@ public class Medico implements Serializable{
 
     public boolean convenioClinipam;
 
+    public Medico(int id, String nome, String endereco, String especialidade){
+        this.id = id;
+        this.nome = nome;
+        this.endereco = endereco;
+        this.especialidade = especialidade;
+    }
+
     public Medico(int id, String nome,  String endereco, String especialidade, boolean convenioBradesco, boolean convenioCassi,
                   boolean convenioClinipam, boolean convenioItau, boolean convenioOutro,
                   boolean convenioSantander, boolean convenioUnimed, boolean sexoFeminino,
@@ -170,20 +177,6 @@ public class Medico implements Serializable{
 
     @Override
     public String toString() {
-        return "Medico{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", especialidade='" + especialidade + '\'' +
-                ", sexoMasculino=" + sexoMasculino +
-                ", sexoFeminino=" + sexoFeminino +
-                ", convenioUnimed=" + convenioUnimed +
-                ", convenioCassi=" + convenioCassi +
-                ", convenioItau=" + convenioItau +
-                ", convenioBradesco=" + convenioBradesco +
-                ", convenioOutro=" + convenioOutro +
-                ", convenioSantander=" + convenioSantander +
-                ", convenioClinipam=" + convenioClinipam +
-                '}';
+        return nome;
     }
 }

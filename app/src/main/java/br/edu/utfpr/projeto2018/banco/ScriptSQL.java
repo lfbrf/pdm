@@ -1,4 +1,4 @@
-package br.edu.utfpr.projeto2018;
+package br.edu.utfpr.projeto2018.banco;
 
 
 public class ScriptSQL {
@@ -13,6 +13,18 @@ public class ScriptSQL {
         stringBuilder.append("senha VARCHAR(20), ");
         stringBuilder.append("cargo VARCHAR(50), ");
         stringBuilder.append("telefone VARCHAR(14)); ");
+
+        return stringBuilder.toString();
+    }
+
+    public static String getCreateConsultas(){
+        //junção de diversas string sql
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("CREATE TABLE Consulta( ");
+        stringBuilder.append("_id INTEGER PRIMARY KEY, ");
+        stringBuilder.append("data VARCHAR(100), ");
+        stringBuilder.append("medico INTEGER , ");
+        stringBuilder.append("usuario INTEGER); ");
 
         return stringBuilder.toString();
     }

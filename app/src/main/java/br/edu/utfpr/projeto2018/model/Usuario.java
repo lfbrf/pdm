@@ -1,12 +1,6 @@
-package br.edu.utfpr.projeto2018;
+package br.edu.utfpr.projeto2018.model;
 
-import android.database.sqlite.SQLiteDatabase;
 
-import java.io.Serializable;
-
-/**
- * Created by valdinei on 04/11/17.
- */
 
 public class Usuario  {
 
@@ -38,6 +32,9 @@ public class Usuario  {
         this.cargo = cargo;
         this.telefone = telefone;
     }
+
+
+
 
     public int getId() {
         return this.id;
@@ -95,6 +92,11 @@ public class Usuario  {
     @Override
     public int hashCode(){
         return this.id;
+    }
+
+    @Override
+    public String toString() {
+        return nome;
     }
 
 

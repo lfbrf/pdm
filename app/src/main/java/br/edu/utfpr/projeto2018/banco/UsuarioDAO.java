@@ -1,17 +1,16 @@
-package br.edu.utfpr.projeto2018;
+package br.edu.utfpr.projeto2018.banco;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
+import br.edu.utfpr.projeto2018.banco.CriaBanco;
+import br.edu.utfpr.projeto2018.model.Usuario;
 
 
 public class UsuarioDAO {
@@ -122,5 +121,30 @@ public class UsuarioDAO {
         }finally {
             db.close();
         }
+    }
+
+    public List<Usuario> getusuariosSpinner(){
+
+        List<Usuario> list = new ArrayList<Usuario>();
+
+        CriaBanco criaBanco = new CriaBanco(context);
+        SQLiteDatabase db = criaBanco.getReadableDatabase();
+
+        String selectQuery = "SELECT * FROM "+ NOME_TABELA;
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()){
+            do {
+
+                list.add(new Usuario(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5)));
+            }while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return list;
+
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorButtonNormal"
-    tools:context="br.edu.utfpr.projeto2018.CadastroLoginActivity">
+    tools:context="br.edu.utfpr.projeto2018.activity.CadastroLoginActivity">
 
     <TextView
         android:id="@+id/textViewCadastroTitle"

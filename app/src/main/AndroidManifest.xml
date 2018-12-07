@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.edu.utfpr.projeto2018">
 
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,20 +18,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MedicosActivity">
+        <activity android:name=".activity.MedicosActivity">
 
         </activity>
-        <activity android:name=".CadastroLoginActivity" />
-        <activity android:name=".UsuarioInicio" />
-        <activity android:name=".CadastroMedicoActivity" />
-        <activity android:name=".UsuariosActivity" />
+
+        <activity android:name=".activity.ConsultaActivity" />
+        <activity android:name=".activity.ShowDialog" />
+        <activity android:name=".activity.CadastroLoginActivity" />
+        <activity android:name=".activity.UsuarioInicio" />
+        <activity android:name=".activity.CadastroMedicoActivity" />
+        <activity android:name=".activity.UsuariosActivity" />
+        <service android:name=".UsuariosService"
+            android:exported="false"/>
 
     </application>
 

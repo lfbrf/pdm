@@ -1,13 +1,11 @@
-package br.edu.utfpr.projeto2018;
+package br.edu.utfpr.projeto2018.activity;
 
+import android.app.FragmentManager;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -19,14 +17,17 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
-import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
-import android.widget.AdapterView.AdapterContextMenuInfo;
+
+import br.edu.utfpr.projeto2018.DeleteDialog;
+
+import br.edu.utfpr.projeto2018.adapters.ListAdapterMedico;
+import br.edu.utfpr.projeto2018.model.Medico;
+import br.edu.utfpr.projeto2018.banco.Medicodao;
+import br.edu.utfpr.projeto2018.R;
 
 public class CadastroMedicoActivity extends AppCompatActivity {
     private int id = -1;
@@ -46,10 +47,13 @@ public class CadastroMedicoActivity extends AppCompatActivity {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        menu.setHeaderTitle("Context Menu");
+        menu.setHeaderTitle("Acoes");
         menu.add(0, v.getId(), 0, "Deletar");
 
     }
+
+
+
 
     public void atualizaListaMedicos(){
         Medicodao medicoDAO = new Medicodao(this);
@@ -63,6 +67,21 @@ public class CadastroMedicoActivity extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo menuInfo;
         menuInfo = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+        FragmentManager manager = getFragmentManager();
+        DeleteDialog alertDialogFragment = new DeleteDialog();
+        alertDialogFragment.show(manager, "fragment_edit_name");
+        try{
+            Thread.sleep(5000);
+        }
+        catch(InterruptedException e){
+            System.out.println("got interrupted!");
+        }
+
+        Bundle b = getIntent().getExtras();
+
+        int zz = b.getInt("VALOR");
+
+            Log.d("ZZZZ" , zz + "OPS");
         int index = menuInfo.position;
         long id = menuInfo.id;
         int cont= 0;
@@ -76,18 +95,11 @@ public class CadastroMedicoActivity extends AppCompatActivity {
 
         ArrayList<Medico> arrayList = medicoDAO.getMedicos();
 
-
-
         for (Medico medic:arrayList){
            if (i == cont)
                medicoDAO.deleteMedico(medic);
             cont ++ ;
         }
-
-
-        if (medicoDAO.deleteMedico(m))
-            Log.v("Usuarios", item.getTitle().toString());
-        Log.v("UsuariosID", x);
         atualizaListaMedicos();
         return true;
     }
@@ -160,6 +172,7 @@ public class CadastroMedicoActivity extends AppCompatActivity {
                 registerForContextMenu(listMedico);
 
             }
+
         });
 
 
